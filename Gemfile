@@ -11,3 +11,5 @@ gem "pry", "~> 0.14.1"
 gem "require_all", "~> 3.0"
 
 gem "dotenv", "~> 2.7"
+
+gem "rspec", "~> 3.11"

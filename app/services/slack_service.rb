@@ -16,9 +16,8 @@ class SlackService
       csv << ['Bar', 1]
       csv << ['Baz', 2]
     end
-    
+
     slack.files_upload(
-      # file: Faraday::UploadIO.new(output_string, 'csv'),
       content: output_string,
       channels: '#general',
       as_user: true,
@@ -28,6 +27,11 @@ class SlackService
       token: ENV['FILE_UPLOAD_TOKEN'],
       filetype: 'csv'
     )
+  end
+
+  def query_user
+    slack.users_info(user: '@dan') # this appears to return similar
+    slack.users_lookupByEmail(email: 'dan@danfoley.dev') # needs 'users:read.email' scope
   end
 
   private 

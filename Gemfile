@@ -14,3 +14,4 @@ gem "dotenv", "~> 2.7"
 
 gem "rspec", "~> 3.11"
 gem "csv"
+gem "activesupport"

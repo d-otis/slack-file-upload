@@ -3,6 +3,7 @@ Bundler.require
 
 require 'rake'
 require 'dotenv/load'
+require "active_support/core_ext/hash/indifferent_access"
 
 require_all './app'
 

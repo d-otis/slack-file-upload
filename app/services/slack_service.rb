@@ -6,7 +6,7 @@ class SlackService
     raise "#{e.class}/#{e.message}: Cannot authorize Slack with token. Check scope or token."
   end
 
-  def send_message(msg, channel='#general') #i did not test this yet
+  def send_message(msg, channel='#general')
     slack.chat_postMessage(channel: channel, text: msg, as_user: true)
   end
 
@@ -17,7 +17,7 @@ class SlackService
       csv << ['Baz', 2]
     end
 
-    slack.files_upload(
+    slack.files_upload( # needs files:write scope https://api.slack.com/methods/files.upload
       content: output_string,
       channels: '#general',
       as_user: true,
@@ -30,13 +30,13 @@ class SlackService
   end
 
   def query_user
-    slack.users_info(user: '@dan') # this appears to return similar
-    slack.users_lookupByEmail(email: 'dan@danfoley.dev') # needs 'users:read.email' scope
+    slack.users_info(user: '@dan') # this appears to return similar as below
+    slack.users_lookupByEmail(email: 'dan@example.com') # needs 'users:read.email' scope
   end
 
   private 
 
-  def slack # should this be self
+  def slack
     @slack_web_client
   end
 end

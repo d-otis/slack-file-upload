@@ -13,3 +13,4 @@ gem "require_all", "~> 3.0"
 gem "dotenv", "~> 2.7"
 
 gem "rspec", "~> 3.11"
+gem "csv"

@@ -17,7 +17,7 @@ class SlackService
       csv << ['Baz', 2]
     end
 
-    slack.files_upload( # needs files:write scope https://api.slack.com/methods/files.upload
+    slack.files_upload( # needs 'files:write' scope https://api.slack.com/methods/files.upload
       content: output_string,
       channels: '#general',
       as_user: true,

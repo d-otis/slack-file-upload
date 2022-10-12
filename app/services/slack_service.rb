@@ -7,7 +7,7 @@ class SlackService
   end
 
   def send_message(msg, channel='#general') #i did not test this yet
-    slack.chat_postMessage(channel: channel, text: msg, as_user: false, username: 'el user')
+    slack.chat_postMessage(channel: channel, text: msg, as_user: true)
   end
 
   def send_csv
